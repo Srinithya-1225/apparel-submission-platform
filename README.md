@@ -8,7 +8,7 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Srinithya-1225/apparel-submission-platform.git
 2. Navigate to the project folder:
 cd apparel-platform
 3. Install the required dependencies:
