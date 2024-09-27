@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apparel Submission</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Submit Your Apparel Information</h2>
+        <form id="apparelForm">
+            <div class="form-group">
+                <label for="description">Apparel Description:</label>
+                <textarea id="description" name="description" placeholder="Enter apparel description" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="condition">Condition:</label>
+                <select id="condition" name="condition" required>
+                    <option value="" disabled selected>Select condition</option>
+                    <option value="New">New</option>
+                    <option value="Slightly Used">Slightly Used</option>
+                    <option value="Worn-out">Worn-out</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="action">Action:</label>
+                <select id="action" name="action" required>
+                    <option value="" disabled selected>Select an action</option>
+                    <option value="Disposal">Disposal</option>
+                    <option value="Donation">Donation</option>
+                    <option value="Recycle">Recycle</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit</button>
+            <div id="responseMessage"></div>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Apparel Submission Platform. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('apparelForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const description = document.getElementById('description').value;
+            const condition = document.getElementById('condition').value;
+            const action = document.getElementById('action').value;
+
+            const response = await fetch('http://localhost:3000/submit-apparel', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    description: description,
+                    condition: condition,
+                    action: action
+                })
+            });
+
+            const result = await response.json();
+            const responseMessage = document.getElementById('responseMessage');
+            responseMessage.textContent = response.ok ? result.message : result.error;
+            responseMessage.classList.add('slide-in');
+
+            if (response.ok) {
+                document.getElementById('apparelForm').reset();
+            }
+        });
+    </script>
+    <link rel="stylesheet" href="/styles.css">
+
+</body>
+</html>

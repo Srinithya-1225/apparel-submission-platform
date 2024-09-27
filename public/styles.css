@@ -1,0 +1,103 @@
+/* Center the form both vertically and horizontally */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #f0f4f8, #dfe7ed);
+}
+
+/* Increase form shadow and improve padding */
+.form-container {
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+/* Adjust heading font size */
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+/* Align the form items properly */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Adjust the textarea to be smaller */
+textarea {
+    height: 60px;  /* Smaller height */
+    padding: 10px;
+    resize: none;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+/* Input and select box enhancements */
+input, select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus state for inputs, textarea, and selects */
+input:focus, select:focus, textarea:focus {
+    border-color: #007bff; /* Highlight on focus */
+}
+
+/* Button improvements */
+button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Response message animation */
+#responseMessage {
+    margin-top: 15px;
+    font-weight: bold;
+    color: green;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+#responseMessage.slide-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer adjustments */
+footer {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 0; /* Reduce padding */
+    text-align: center;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
