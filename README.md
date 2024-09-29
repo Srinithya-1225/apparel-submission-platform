@@ -24,4 +24,6 @@ Logs submissions in the terminal.
 Frontend: HTML, CSS
 Backend: Node.js, Express.js
 Other: nodemon, cors
- 
+## Project Demo
+You can view the video demo of the project here: (https://drive.google.com/file/d/1LNk-CzcWE5_i-ZD0uITQjtkfmTuAeTst/view?usp=drivesdk).
+
